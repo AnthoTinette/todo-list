@@ -1,0 +1,26 @@
+// Layout
+.app-login-root-layout {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-login-card {
+  max-width: 500px;
+}
+
+.app-login-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.app-login-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.app-login-form-input {
+  width: 100%;
+  margin: 1rem 0rem;
+}

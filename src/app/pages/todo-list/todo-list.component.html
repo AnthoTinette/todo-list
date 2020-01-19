@@ -1,0 +1,33 @@
+<div class="app-todo-root-layout">
+  <div class="app-input-todo-wrapper">
+    <mat-form-field class="app-input-todo">
+      <input
+        matInput
+        placeholder="Entrer votre note"
+        [formControl]="todoFormControl"
+        [(ngModel)]="todoName"
+        (keydown.enter)="saveTodo()"
+        autocomplete="off"
+      />
+      <mat-hint>Entrer votre note, ajouter le symbole -- pour ajouter une description a votre note</mat-hint>
+      <mat-error *ngIf="todoFormControl.hasError('required')">
+        Entrez une note pour sauvegarder 
+      </mat-error>
+    </mat-form-field>
+    <button (click)="saveTodo()" mat-raised-button color="primary">Ok</button>
+  </div>
+  <ngx-masonry>
+    <app-todo
+      *ngFor="let todo of todos; let index = index"
+      [name]="todo.name"
+      [description]="todo.description"
+      [updated]="todo.updated"
+      [index]="index"
+      [todoEditControl]="todoEditControl"
+      [todoEdit]="todoEdit"
+      (edit)="editTodo($event)"
+      (delete)="deleteTodo($event)"
+    >
+    </app-todo>
+  </ngx-masonry>
+</div>

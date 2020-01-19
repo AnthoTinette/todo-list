@@ -1,0 +1,29 @@
+<div class="app-login-root-layout">
+  <mat-card class="app-login-card">
+    <mat-card-header class="app-login-header">
+      <div mat-card-avatar>
+        <img src="https://visualpharm.com/assets/922/Todo%20List-595b40b65ba036ed117d45fe.svg" />
+      </div>
+      <mat-card-title>Bienvenue sur l'application TodoList</mat-card-title>
+      <mat-card-subtitle>Entrer votre adresse e-mail pour accèder à l'application</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field class="app-login-form-input">
+          <input matInput #message maxlength="256" placeholder="Adresse e-mail" [formControl]="emailFormControl" [(ngModel)]="userEmail">
+          <mat-hint align="start"><strong>Entrer un format d'email valide (exemple: johndoe@gmail.com)</strong> </mat-hint>
+          <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Entrez une adresse e-mail valide
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Un e-mail est <strong>requis</strong>
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="app-login-action">
+      <button type="submit" (click)="onSubmit()" mat-raised-button color="primary">Connexion</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

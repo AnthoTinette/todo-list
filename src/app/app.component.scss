@@ -1,0 +1,55 @@
+// Layout
+.app-footer {
+  background-color: #512da8;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+  margin-top: -2.2rem;
+}
+
+.app-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-chip {
+  border-radius: 30px;
+  padding: 0.25rem 0.75rem 0.25rem 0.25rem;
+  background: white;
+}
+
+.app-logo > .mat-icon {
+  font-size: 29px;
+}
+.app-logo > div {
+  margin-left: 0.65rem;
+}
+
+.app-todo-header {
+  justify-content: space-between;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  color: white;
+  background-color: #512da8;
+}
+
+.app-user-data {
+  display: flex;
+}
+
+.app-user-data-avatar {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-username-text {
+  font-size: 15px;
+  margin-left: 1rem;
+}
+
+// Utils
+.disconnect-item {
+  color: '#ff00000';
+}

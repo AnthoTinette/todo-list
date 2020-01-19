@@ -1,0 +1,16 @@
+<div class="masonr@y-item app-todo-card" ngxMasonryItem>
+  <input *ngIf="editMode === true" matInput placeholder="Modifiez votre note" [formControl]="todoEditControl"
+    [(ngModel)]="todoEdit" (keydown.enter)="editTodo()"/>
+  <ng-container *ngIf="editMode === false">
+    <h2 class="name-wrapper">{{ name }}</h2>
+    <h4 class="description-wrapper">{{ description }}</h4>
+  </ng-container>
+  <p class="date-wrapper">Dernière modification : {{ updated || date }}</p>
+  <div class="app-todo-action-button">
+    <button *ngIf="editMode === true" (click)="editTodo()" mat-button color="primary">Enregistrer</button>
+    <ng-container *ngIf="editMode === false">
+      <button (click)="toggleEdit()" mat-button color="primary">Editer</button>
+      <button (click)="delete.emit(index)" mat-button color="warn">Supprimer</button>
+    </ng-container>
+  </div>
+</div>
